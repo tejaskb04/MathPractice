@@ -14,6 +14,7 @@ import java.util.Random;
 public class AdditionLevelOneActivity extends AppCompatActivity {
 
     private TextView time;
+    private TextView score;
     private TextView problem;
     private EditText answer;
     private Button enter;
@@ -30,6 +31,7 @@ public class AdditionLevelOneActivity extends AppCompatActivity {
     private Random r;
     private String text = "";
     private int userAnswer = Integer.MIN_VALUE;
+    private int userScore = 0;
     private int correctAnswer;
 
     @Override
@@ -37,6 +39,7 @@ public class AdditionLevelOneActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addition_level_one);
         time = (TextView) findViewById(R.id.time);
+        score = (TextView) findViewById(R.id.score);
         problem = (TextView) findViewById(R.id.problem);
         answer = (EditText) findViewById(R.id.answer);
         enter = (Button) findViewById(R.id.enter);
@@ -51,6 +54,7 @@ public class AdditionLevelOneActivity extends AppCompatActivity {
         eightBtn = (Button) findViewById(R.id.eight);
         nineBtn = (Button) findViewById(R.id.nine);
         answer.setText(text);
+        score.setText("Score ");
         r = new Random();
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +66,8 @@ public class AdditionLevelOneActivity extends AppCompatActivity {
                         text = "";
                         answer.setText(text);
                         userAnswer = Integer.MIN_VALUE;
+                        userScore += 10;
+                        score.setText("Score " + userScore);
                     }
                 } catch (NumberFormatException e) {
                     e.printStackTrace();
@@ -153,7 +159,8 @@ public class AdditionLevelOneActivity extends AppCompatActivity {
                 time.setText("Time!");
                 // Implement Other Logic
             }
-        }.start();
+        };
+        countDownTimer.start();
     }
 
     private void generateProblem(TextView problem) {

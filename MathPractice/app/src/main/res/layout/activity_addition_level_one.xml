@@ -11,13 +11,26 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/time"
-            android:typeface="sans"
-            android:textSize="24sp"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/time"
+                android:typeface="sans"
+                android:textSize="24sp"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/score"
+                android:typeface="sans"
+                android:textSize="24sp"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
