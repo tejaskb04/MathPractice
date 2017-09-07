@@ -27,8 +27,9 @@ public class AdditionLevelOneActivity extends AppCompatActivity {
     private Button sevenBtn;
     private Button eightBtn;
     private Button nineBtn;
+    private Random r;
     private String text = "";
-    private int userAnswer;
+    private int userAnswer = Integer.MIN_VALUE;
     private int correctAnswer;
 
     @Override
@@ -50,10 +51,22 @@ public class AdditionLevelOneActivity extends AppCompatActivity {
         eightBtn = (Button) findViewById(R.id.eight);
         nineBtn = (Button) findViewById(R.id.nine);
         answer.setText(text);
+        r = new Random();
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                userAnswer = Integer.parseInt(answer.getText().toString());
+                try {
+                    userAnswer = Integer.parseInt(answer.getText().toString());
+                    if (userAnswer == correctAnswer) {
+                        generateProblem(problem);
+                        text = "";
+                        answer.setText(text);
+                        userAnswer = Integer.MIN_VALUE;
+                    }
+                } catch (NumberFormatException e) {
+                    e.printStackTrace();
+                    // Show Error Message
+                }
             }
         });
         zeroBtn.setOnClickListener(new View.OnClickListener() {
@@ -131,30 +144,22 @@ public class AdditionLevelOneActivity extends AppCompatActivity {
             @Override
             public void onTick(long millisUntilFinished) {
                 time.setText("Seconds Remaining: " + millisUntilFinished / 1000);
-                if (userAnswer == correctAnswer) {
-                    generateProblem(problem);
-                    text = "";
-                    answer.setText(text);
-                }
             }
 
             @Override
             public void onFinish() {
-                Toast.makeText(AdditionLevelOneActivity.this, "Time is Up!", Toast.LENGTH_SHORT);
+                Toast.makeText(AdditionLevelOneActivity.this, "Time is Up!", Toast.LENGTH_LONG)
+                        .show();
+                time.setText("Time!");
                 // Implement Other Logic
             }
         }.start();
     }
 
     private void generateProblem(TextView problem) {
-        Random r = new Random();
         int a = r.nextInt(10);
         int b = r.nextInt(10);
-        problem.setText(a + " " + "+" + " " + b + " " + "=");
-        correctAnswer = calculateCorrectAnswer(a, b);
-    }
-
-    private int calculateCorrectAnswer(int a, int b) {
-        return a + b;
+        problem.setText(a + " + " + b + " = ");
+        correctAnswer = a + b;
     }
 }
