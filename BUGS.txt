@@ -1,0 +1,2 @@
+BUGS:
+1. App Randomly Crashes (Cause: Unknown)

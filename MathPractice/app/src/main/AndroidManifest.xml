@@ -16,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AdditionActivity" />
+        <activity android:name=".SubtractionActivity" />
+        <activity android:name=".MultiplicationActivity" />
+        <activity android:name=".DivisionActivity" />
+        <activity android:name=".AdditionLevelOneActivity"></activity>
     </application>
 
 </manifest>
