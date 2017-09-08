@@ -20,7 +20,10 @@
         <activity android:name=".SubtractionActivity" />
         <activity android:name=".MultiplicationActivity" />
         <activity android:name=".DivisionActivity" />
-        <activity android:name=".AdditionLevelOneActivity"></activity>
+        <activity android:name=".AdditionLevelOneActivity" />
+        <activity android:name=".AdditionLevelTwoActivity" />
+        <activity android:name=".AdditionLevelThreeActivity" />
+        <activity android:name=".AdditionLevelFourActivity"></activity>
     </application>
 
 </manifest>
