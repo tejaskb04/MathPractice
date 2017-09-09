@@ -27,7 +27,11 @@
         <activity android:name=".SubtractionLevelOneActivity" />
         <activity android:name=".SubtractionLevelTwoActivity" />
         <activity android:name=".SubtractionLevelThreeActivity" />
-        <activity android:name=".SubtractionLevelFourActivity"></activity>
+        <activity android:name=".SubtractionLevelFourActivity" />
+        <activity android:name=".MultiplicationLevelOneActivity" />
+        <activity android:name=".MultiplicationLevelTwoActivity" />
+        <activity android:name=".MultiplicationLevelThreeActivity" />
+        <activity android:name=".MultiplicationLevelFourActivity"></activity>
     </application>
 
 </manifest>
