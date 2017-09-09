@@ -23,7 +23,11 @@
         <activity android:name=".AdditionLevelOneActivity" />
         <activity android:name=".AdditionLevelTwoActivity" />
         <activity android:name=".AdditionLevelThreeActivity" />
-        <activity android:name=".AdditionLevelFourActivity"></activity>
+        <activity android:name=".AdditionLevelFourActivity" />
+        <activity android:name=".SubtractionLevelOneActivity" />
+        <activity android:name=".SubtractionLevelTwoActivity" />
+        <activity android:name=".SubtractionLevelThreeActivity" />
+        <activity android:name=".SubtractionLevelFourActivity"></activity>
     </application>
 
 </manifest>
