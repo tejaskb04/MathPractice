@@ -31,7 +31,11 @@
         <activity android:name=".MultiplicationLevelOneActivity" />
         <activity android:name=".MultiplicationLevelTwoActivity" />
         <activity android:name=".MultiplicationLevelThreeActivity" />
-        <activity android:name=".MultiplicationLevelFourActivity"></activity>
+        <activity android:name=".MultiplicationLevelFourActivity" />
+        <activity android:name=".DivisionLevelOneActivity" />
+        <activity android:name=".DivisionLevelTwoActivity" />
+        <activity android:name=".DivisionLevelThreeActivity" />
+        <activity android:name=".DivisionLevelFourActivity"></activity>
     </application>
 
 </manifest>
