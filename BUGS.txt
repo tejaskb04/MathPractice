@@ -1,2 +1,2 @@
 BUGS:
----
+1. Fix RNG range in addition, subtraction, and multiplication.
