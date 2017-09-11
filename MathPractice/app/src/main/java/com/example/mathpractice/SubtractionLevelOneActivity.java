@@ -37,7 +37,7 @@ public class SubtractionLevelOneActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addition_level_one);
+        setContentView(R.layout.activity_subtraction_level_one);
         time = (TextView) findViewById(R.id.time);
         score = (TextView) findViewById(R.id.score);
         problem = (TextView) findViewById(R.id.problem);
