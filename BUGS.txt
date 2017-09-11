@@ -1,2 +1,4 @@
 BUGS:
-1. Fix RNG range in addition, subtraction, and multiplication.
+1.RNG range in addition, subtraction, and multiplication does not work as intended.
+2.Parsing user answer to integer sometimes breaks the app (commonly seen in "DivisionActivities").
+3.Previous instances of CountDownTimer are not destroyed when an activity is exited.
