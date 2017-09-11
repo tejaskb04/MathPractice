@@ -28,6 +28,7 @@ public class AdditionLevelTwoActivity extends AppCompatActivity {
     private Button sevenBtn;
     private Button eightBtn;
     private Button nineBtn;
+    private Button backspace;
     private Random r;
     private String text = "";
     private int userAnswer = Integer.MIN_VALUE;
@@ -53,6 +54,7 @@ public class AdditionLevelTwoActivity extends AppCompatActivity {
         sevenBtn = (Button) findViewById(R.id.seven);
         eightBtn = (Button) findViewById(R.id.eight);
         nineBtn = (Button) findViewById(R.id.nine);
+        backspace = (Button) findViewById(R.id.backspace);
         answer.setText(text);
         score.setText("Score ");
         r = new Random();
@@ -143,6 +145,15 @@ public class AdditionLevelTwoActivity extends AppCompatActivity {
             public void onClick(View v) {
                 text += "9";
                 answer.setText(text);
+            }
+        });
+        backspace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (text.length() != 0) {
+                    text = text.substring(0, text.length() - 1);
+                    answer.setText(text);
+                }
             }
         });
         generateProblem(problem);
