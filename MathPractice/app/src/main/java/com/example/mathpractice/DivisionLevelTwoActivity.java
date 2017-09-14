@@ -3,6 +3,7 @@ package com.example.mathpractice;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,6 +31,7 @@ public class DivisionLevelTwoActivity extends AppCompatActivity {
     private Button eightBtn;
     private Button nineBtn;
     private Button backspace;
+    private CountDownTimer countDownTimer;
     private Random r;
     private String text = "";
     private int userAnswer = Integer.MIN_VALUE;
@@ -158,7 +160,7 @@ public class DivisionLevelTwoActivity extends AppCompatActivity {
             }
         });
         generateProblem(problem);
-        CountDownTimer countDownTimer = new CountDownTimer(120000, 1000) {
+        countDownTimer = new CountDownTimer(120000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 time.setText("Seconds Remaining: " + millisUntilFinished / 1000);
@@ -169,14 +171,25 @@ public class DivisionLevelTwoActivity extends AppCompatActivity {
                 Toast.makeText(DivisionLevelTwoActivity.this, "Time is Up!", Toast.LENGTH_LONG)
                         .show();
                 time.setText("Time!");
-                // Implement Other Logic
+                enter.setEnabled(false);
+                zeroBtn.setEnabled(false);
+                oneBtn.setEnabled(false);
+                twoBtn.setEnabled(false);
+                threeBtn.setEnabled(false);
+                fourBtn.setEnabled(false);
+                fiveBtn.setEnabled(false);
+                sixBtn.setEnabled(false);
+                sevenBtn.setEnabled(false);
+                eightBtn.setEnabled(false);
+                nineBtn.setEnabled(false);
+                backspace.setEnabled(false);
             }
         };
         countDownTimer.start();
     }
 
     private void generateProblem(TextView problem) {
-        int a = r.nextInt(100);
+        int a = r.nextInt(90) + 10;
         while (a == 0) {
             a = r.nextInt();
         }
@@ -193,5 +206,13 @@ public class DivisionLevelTwoActivity extends AppCompatActivity {
         }
         int index = r.nextInt(factors.size());
         return factors.get(index);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent keyEvent) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            countDownTimer.cancel();
+        }
+        return super.onKeyDown(keyCode, keyEvent);
     }
 }
